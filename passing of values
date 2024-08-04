@@ -1,0 +1,59 @@
+#include <stdio.h>
+
+void pass_by_value(int x) {
+    x = x + 10;
+    printf("Inside function: x = %d\n", x);
+}
+
+void pass_by_reference(int *x) {
+    *x = *x + 10;
+    printf("Inside function: x = %d\n", *x);
+}
+
+int main() {
+    int x = 5;
+
+    printf("Before function call: x = %d\n", x);
+    pass_by_value(x);
+    printf("After pass by value: x = %d\n", x);
+
+    pass_by_reference(&x);
+    printf("After pass by reference: x = %d\n", x);
+
+    return 0;
+}
+
+
+
+Explanation:
+
+Pass by value:
+A copy of the argument is passed to the function.
+Changes made to the argument inside the function do not affect the original variable.
+In the code, the pass_by_value function demonstrates this. The value of x is not changed in the main function.
+
+Pass by reference:
+The address of the argument is passed to the function.
+Changes made to the argument inside the function affect the original variable.
+
+In the code, the pass_by_reference function demonstrates this. 
+
+The value of x is changed in the main function.
+Features of functions/subprograms:
+
+Function definition: 
+    void pass_by_value(int x), void pass_by_reference(int *x)
+    
+Function call:
+    pass_by_value(x), pass_by_reference(&x)
+    
+Parameters: 
+    x in both functions
+    
+Return type: 
+    void in both functions (no return value)
+    
+Local variables: 
+    x in both functions
+Scope: 
+    Variables defined within a function are local to that function.
